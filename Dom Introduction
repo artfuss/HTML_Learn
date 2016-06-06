@@ -11,7 +11,13 @@ with src attribute are downloaded first) and executed.
 
 Once all the html is parsed and element nodes added to the dom(document)
 document.readyState = interactive
-1. domContentLoadedEvent is fired on the window object and then <images> and other files are downloaded.
+1. domContentLoadedEvent is fired on the document object and then <images> and other files are downloaded.
 
 Finally
 document.readyState = complete
+
+
+<script src....> </script> - synchronous execution, pause the html parser and execute
+<script asyn src..></script> - asynchronous execution, execute script and continue html parsing simultaneously
+<script defered src..></script> - defered execution, wait for parsing to complete (document.readyState = interactive) before 
+                                  starting the execution of the script.
