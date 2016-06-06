@@ -1,0 +1,17 @@
+Browser's HTMLParser parses the the html document(tree like document) into an in-memory representation
+called DOM (document object).
+
+document.readyState = loading/interactive/complete
+
+document.readyState = loading
+1.HTML Parser starts parsing the html and add the html elements to the dom (document object).
+2.When a <script> tag is seen, the HTML Parser is paused and the script is synchronously (externally sourced
+with src attribute are downloaded first) and executed.
+3.HTML Parser continues parsing the remaining html.
+
+Once all the html is parsed and element nodes added to the dom(document)
+document.readyState = interactive
+1. domContentLoadedEvent is fired on the window object and then <images> and other files are downloaded.
+
+Finally
+document.readyState = complete
